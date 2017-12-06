@@ -9,11 +9,14 @@ import { AngularFireModule } from 'angularfire2';
 import { AngularFireDatabaseModule } from 'angularfire2/database';
 import { AngularFireAuthModule } from 'angularfire2/auth';
 
-
+// Comonents
 import { AppComponent } from './app.component';
 import { LoginComponent } from './login/login.component';
 import { SignupComponent } from './signup/signup.component';
 import { MembersComponent } from './members/members.component';
+
+// Services
+import { AuthService } from './providers/auth.service';
 
 
 @NgModule({
@@ -31,7 +34,7 @@ import { MembersComponent } from './members/members.component';
     AngularFireDatabaseModule,
     AngularFireAuthModule
   ],
-  providers: [],
+  providers: [AuthService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

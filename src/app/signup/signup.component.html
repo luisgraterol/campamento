@@ -1,3 +1,22 @@
-<p>
-  signup works!
-</p>
+<input [(ngModel)]="nombre" type="text" name="nombre" placeholder="Nombre">
+<input [(ngModel)]="apellido" type="text" name="apellido" placeholder="Apellido">
+<input [(ngModel)]="email" type="text" name="email" placeholder="Correo Electronico">
+<input [(ngModel)]="password" type="password" name="password" placeholder="Contraseña">
+
+<!-- Radio Buttons -->
+
+<div class="row center">
+  <div class="col-lg-2"></div>
+  <div class="col-lg-8">
+    <div class="row">
+      <h5>Coordinador</h5>
+      <input [(ngModel)]="status" type="radio" name="status" value="coordinador">
+      <h5>Guia</h5>
+      <input [(ngModel)]="status" type="radio" name="status" value="guia">
+    </div>
+  </div>
+  <div class="col-lg-2"></div>
+</div>
+
+<button (click)="signup()">Sign Up</button>
+<button (click)="gotoLogin()">Atras</button>
