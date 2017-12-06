@@ -1,6 +1,17 @@
-/* You can add global styles to this file, and also import other style files */
-
 body {
-  background: #eee;
-  font-family: Helvetica, Arial, sans-serif;
+    background-color:#EBEBEB;
+    padding-top: 5em;
+}
+* {
+    font-family: 'Raleway';
+}
+button {
+    background:#008FEF;
+    color:white;
+    margin: 60px 30px;
+    padding: 1.2em;
+    width:200px;
+    text-align:center;
+    font-size:1.2em;
+    cursor:pointer;
 }

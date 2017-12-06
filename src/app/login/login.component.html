@@ -1,3 +1,11 @@
-<p>
-  login works!
-</p>
+<div class="row">
+  <div class="col-lg-6">
+    <input type="text" id="email-input" [(ngModel)]="email" placeholder="Email" (keyup.enter)="Send($event.target.value)" />
+    <input type="password" id="password-input" [(ngModel)]="password" placeholder="Password" (keyup.enter)="Send($event.target.value)" />
+    <button (click)="login()" *ngIf="!(user | async)?.uid">Login</button>
+    <button (click)="signup()" *ngIf="!(user | async)?.uid">Sign Up</button>
+  </div>
+  <!-- <div id="details-container">
+      <p *ngFor="let item of items | async">{{item.message}}</p>
+  </div> -->
+</div>
