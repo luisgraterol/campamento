@@ -37,7 +37,17 @@ export class AuthService {
       .catch(e => console.log(e.message));
   }
 
+  login(email, password) {
+    this.afAuth.auth.signInWithEmailAndPassword(email, password)
+      .then(() => {
+        console.log('You logged in!\nYour user info is: ');
+        console.log(this.user);
+      })
+      .catch(e => console.log("Error en el login:\n" + e.message));
+  }
+
   logout() {
       this.afAuth.auth.signOut();
+      console.log('You logged out!');
   }
 }

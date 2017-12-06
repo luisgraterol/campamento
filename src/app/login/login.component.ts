@@ -6,6 +6,9 @@ import { AngularFireAuth } from 'angularfire2/auth';
 import { Observable } from 'rxjs/Observable';
 import * as firebase from 'firebase/app';
 
+// Services
+import { AuthService } from '../providers/auth.service';
+
 import { Router } from '@angular/router';
 // import EmailValidator from 'email-validator';
 
@@ -18,28 +21,16 @@ export class LoginComponent implements OnInit {
 
   email: string;
   password: string;
-  // user: Observable<firebase.User>;
-  // users: FirebaseListObservable<any[]>;
 
   @Input() show: boolean;
   @Output() showSignup = new EventEmitter<boolean>();
 
 
-  constructor(public afAuth: AngularFireAuth, public af: AngularFireDatabase, private router: Router) {
-    // this.users = af.list('/users', {});
-    // this.user = this.afAuth.authState;
-  }
+  constructor(public afAuth: AngularFireAuth, public af: AngularFireDatabase, public authService: AuthService, private router: Router) { }
 
   login() {
-    this.afAuth.auth.signInWithEmailAndPassword(this.email, this.password)
-      .then(() => {
-        this.router.navigateByUrl('/members');
-      })
-      .catch(e => console.log("Error en el login:\n" + e.message));
-  }
-
-  logout() {
-      this.afAuth.auth.signOut();
+    this.authService.login(this.email, this.password);
+    this.router.navigateByUrl('/members');
   }
 
   gotoSignup() {
@@ -47,7 +38,7 @@ export class LoginComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.logout();
+    this.authService.logout();
   }
 
 }
