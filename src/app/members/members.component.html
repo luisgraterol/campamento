@@ -1,3 +1,6 @@
-<p>
-  members works!
-</p>
+
+<h3>Bienvenido!</h3>
+
+<h4 *ngIf="nombre | async">Hola, {{ nombre }}!</h4>
+
+<button (click)="logout()">Logout</button>

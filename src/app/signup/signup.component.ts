@@ -34,8 +34,6 @@ export class SignupComponent implements OnInit {
     this.router.navigateByUrl('/login');
   }
 
-
-  ngOnInit() {
-  }
+  ngOnInit() { }
 
 }
