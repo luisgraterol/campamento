@@ -17,6 +17,7 @@ import { MembersComponent } from './members/members.component';
 
 // Services
 import { AuthService } from './providers/auth.service';
+import { ListComponent } from './members/list/list.component';
 
 
 @NgModule({
@@ -24,7 +25,8 @@ import { AuthService } from './providers/auth.service';
     AppComponent,
     LoginComponent,
     SignupComponent,
-    MembersComponent
+    MembersComponent,
+    ListComponent
   ],
   imports: [
     BrowserModule,

@@ -1,0 +1,19 @@
+<div class="row">
+  <div class="col-lg-1"></div>
+  <div class="col-lg-10">
+    <ul class="list-group">
+      <li *ngFor="let item of items | async" class="list-group-item">
+        <label class="checkbox-inline">
+          <input type="checkbox" value="{{item.check}}">{{item.description}}
+        </label>
+      </li>
+    </ul>
+
+    <input *ngIf="status=='coordinador'" id="input-agregar" [(ngModel)]="input" type="text" placeholder="Ingrese una descripción aquí">
+
+    <button *ngIf="status=='coordinador'" (click)="send()" class="block-center">Agregar</button>
+
+
+  </div>
+  <div class="col-lg-1"></div>
+</div>

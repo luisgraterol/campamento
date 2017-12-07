@@ -1,0 +1,13 @@
+ul {
+  padding-top: 3rem;
+  align-self: center;
+}
+
+li {
+  font-weight: lighter;
+}
+
+#input-agregar {
+  margin: 2rem;
+  align-self: center;
+}
