@@ -20,7 +20,8 @@ export class ListComponent implements OnInit {
   constructor(public db: AngularFireDatabase) {
     this.items = db.list('/items', {
       // query: {
-      //   orderByChild: description
+      //   orderByChild: this.items.description,
+      //   equalsTo: 'Franelas'
       // }
     });
     this.input;

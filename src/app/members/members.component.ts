@@ -27,7 +27,7 @@ export class MembersComponent implements OnInit {
 
   constructor(public afAuth: AngularFireAuth, public db: AngularFireDatabase, public authService: AuthService, private router: Router) {
 
-    this.nombre;
+    // this.nombre;
     //this.user = this.authService.getMyUser();
     afAuth.auth.onAuthStateChanged(function(user) {
       if (user) {
